@@ -1,7 +1,8 @@
 ---
 title: CLI Reference
 description: Every command and flag for managing creatures.
-order: 4
+order: 5
+section: core
 ---
 
 ## Commands

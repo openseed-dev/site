@@ -1,14 +1,15 @@
 ---
 title: Getting Started
-description: Install OpenSeed, spawn your first creature, and watch it think.
+description: From zero to a running creature in two minutes.
 order: 1
+section: core
 ---
 
-## Prerequisites
+# Getting Started
 
-You need [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running. That's it.
+You need [Docker Desktop](https://www.docker.com/products/docker-desktop/) and an API key. Nothing else.
 
-## Quick Start (Docker Compose)
+## 1. Clone and configure
 
 ```bash
 git clone https://github.com/openseed-dev/openseed.git
@@ -16,49 +17,29 @@ cd openseed
 cp .env.example .env
 ```
 
-Open `.env` and add your API key(s) — at minimum, set `ANTHROPIC_API_KEY` or `OPENAI_API_KEY`.
+Open `.env` and set at least one API key:
+
+```
+ANTHROPIC_API_KEY=sk-ant-...
+```
+
+Or `OPENAI_API_KEY` if you prefer GPT models.
+
+## 2. Start
 
 ```bash
 docker compose up
 ```
 
-Open [http://localhost:7770](http://localhost:7770), click **+** to spawn a creature, and watch it think.
+## 3. Spawn a creature
 
-## Native Install (Alternative)
+Open [http://localhost:7770](http://localhost:7770). Click **+** in the top bar. Give your creature a name, a purpose, and pick a model. Hit spawn.
 
-If you prefer running outside Docker:
+The creature boots in its own Docker container, reads its purpose, and starts thinking. You'll see thoughts, tool calls, and sleep cycles stream in real-time.
 
-**Requirements:** Node.js 18+, pnpm, Docker (still needed for creature containers)
+Send it a message with **Cmd+Enter** (Ctrl+Enter on Windows/Linux).
 
-```bash
-git clone https://github.com/openseed-dev/openseed.git
-cd openseed
-pnpm install
-export ANTHROPIC_API_KEY=sk-ant-...
-pnpm up
-```
-
-Open [http://localhost:7770](http://localhost:7770).
-
-## Spawning from CLI
-
-```bash
-pnpm spawn alpha -- --purpose "explore the world and build useful things"
-```
-
-This creates a creature named `alpha` with the given purpose. The name is arbitrary — pick whatever you want.
-
-## What Happens Next
-
-When a creature spawns, it:
-
-1. Boots inside its own Docker container
-2. Reads its `PURPOSE.md` to understand what it should do
-3. Starts thinking — calling tools, making decisions, sleeping when idle
-
-The dashboard at [http://localhost:7770](http://localhost:7770) shows thoughts, tool calls, and sleep cycles in real time. Send messages to a creature with **Cmd+Enter** (or **Ctrl+Enter**).
-
-## Choosing a Model
+## Models
 
 | Model | Provider | Input / Output per MTok |
 |---|---|---|
@@ -69,10 +50,15 @@ The dashboard at [http://localhost:7770](http://localhost:7770) shows thoughts, 
 | gpt-5-mini | OpenAI | $0.25 / $2 |
 | o4-mini | OpenAI | $1.10 / $4.40 |
 
-Set the model at spawn time with `--model`:
+Select the model from the dropdown when spawning. Cheaper models think faster but less deeply. `claude-sonnet-4-5` is a good starting point.
 
-```bash
-pnpm spawn alpha -- --purpose "build things" --model claude-sonnet-4-5
-```
+## What happens next
 
-Or select a model from the dropdown in the dashboard when spawning via the UI.
+The creature is autonomous. It will:
+
+1. Read its purpose and decide what to do
+2. Use bash, browse the web, make API calls
+3. Sleep when it gets tired — consolidating what it learned
+4. Wake up and keep going
+
+Check back in an hour. You might be surprised.

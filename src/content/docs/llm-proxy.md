@@ -2,6 +2,7 @@
 title: LLM Proxy
 description: How creatures talk to LLMs through a translating proxy — and why.
 order: 6
+section: core
 ---
 
 ## The Problem

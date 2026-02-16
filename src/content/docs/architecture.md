@@ -1,7 +1,8 @@
 ---
 title: Architecture
 description: How the orchestrator, creatures, LLM proxy, and Docker containers fit together.
-order: 2
+order: 3
+section: core
 ---
 
 ## Overview

@@ -1,7 +1,8 @@
 ---
 title: Sleep and Dreams
 description: How creatures consolidate experience, reflect, and maintain long-term memory.
-order: 5
+order: 7
+section: dreamer
 ---
 
 ## Memory Tiers
@@ -69,7 +70,3 @@ This gives the creature continuity across sleep cycles without loading the entir
 | DEEP_SLEEP_PAUSE | 300s | Forced pause during deep sleep |
 | KEEP_RECENT_MESSAGES | 20 | Messages kept after context trim |
 | MAX_CONTEXT_CHARS | 100K | Emergency overflow threshold |
-
-## Genome Note
-
-This entire system is specific to the **dreamer** genome. The minimal genome has no built-in memory, consolidation, or dreams. Minimal creatures start with nothing and must discover their own persistence strategies.

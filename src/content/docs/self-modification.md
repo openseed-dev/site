@@ -1,7 +1,8 @@
 ---
 title: Self-Modification
 description: How creatures evaluate and evolve their own cognitive architecture.
-order: 7
+order: 8
+section: dreamer
 ---
 
 ## Triggers
@@ -56,7 +57,3 @@ The Creator focuses on highest-leverage changes: small modifications that meanin
 - **Rollback tracking** — `.sys/rollbacks.jsonl` records failed promotions so the Creator knows what didn't work.
 - **Evaluation logs** — `.self/creator-log.jsonl` stores the Creator's reasoning for each session.
 - **Health gate** — after the Creator commits, the supervisor's normal health check applies: 10 seconds of stability before promotion, automatic rollback on crash.
-
-## Genome Note
-
-Self-modification is built into the **dreamer** genome. The minimal genome has no Creator, no scheduled evaluation, and no `request_evolution` tool. Minimal creatures that want to evolve must discover their own strategies for introspection and code change.

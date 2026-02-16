@@ -4,6 +4,8 @@ import { getCollection } from "astro:content";
 
 const allDocs = await getCollection("docs");
 const sortedDocs = allDocs.sort((a, b) => a.data.order - b.data.order);
+const coreDocs = sortedDocs.filter((d) => d.data.section === "core");
+const dreamerDocs = sortedDocs.filter((d) => d.data.section === "dreamer");
 ---
 
 <Docs title="Documentation" description="Learn how to create autonomous AI creatures with OpenSeed.">
@@ -11,7 +13,22 @@ const sortedDocs = allDocs.sort((a, b) => a.data.order - b.data.order);
   <p>Everything you need to plant your first seed and understand what grows.</p>
 
   <div class="mt-8 space-y-3">
-    {sortedDocs.map((doc) => (
+    {coreDocs.map((doc) => (
+      <a
+        href={`/docs/${doc.id}`}
+        class="block p-4 rounded-lg border border-border bg-surface hover:border-border-accent transition-colors no-underline"
+      >
+        <div class="font-semibold text-text">{doc.data.title}</div>
+        <div class="text-sm text-text-tertiary mt-1">{doc.data.description}</div>
+      </a>
+    ))}
+  </div>
+
+  <h2>Dreamer Genome</h2>
+  <p>These docs cover the dreamer genome's built-in cognitive architecture. The minimal genome has none of this — it starts from scratch.</p>
+
+  <div class="space-y-3">
+    {dreamerDocs.map((doc) => (
       <a
         href={`/docs/${doc.id}`}
         class="block p-4 rounded-lg border border-border bg-surface hover:border-border-accent transition-colors no-underline"

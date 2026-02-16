@@ -11,7 +11,15 @@ const { title, description } = Astro.props;
 
 const allDocs = await getCollection("docs");
 const sortedDocs = allDocs.sort((a, b) => a.data.order - b.data.order);
+const coreDocs = sortedDocs.filter((d) => d.data.section === "core");
+const dreamerDocs = sortedDocs.filter((d) => d.data.section === "dreamer");
 const currentPath = Astro.url.pathname.replace(/\/$/, "");
+
+function linkClass(href: string) {
+  return currentPath === href
+    ? "block text-sm px-3 py-1.5 rounded-md text-text bg-surface transition-colors"
+    : "block text-sm px-3 py-1.5 rounded-md text-text-secondary hover:text-text transition-colors";
+}
 ---
 
 <Base title={`${title} — OpenSeed Docs`} description={description}>
@@ -21,34 +29,25 @@ const currentPath = Astro.url.pathname.replace(/\/$/, "");
       <!-- Sidebar -->
       <aside class="hidden lg:block">
         <nav class="sticky top-20 space-y-1">
-          <a
-            href="/docs"
-            class:list={[
-              "block text-sm px-3 py-1.5 rounded-md transition-colors",
-              currentPath === "/docs"
-                ? "text-text bg-surface"
-                : "text-text-secondary hover:text-text",
-            ]}
-          >
-            Overview
-          </a>
-          {sortedDocs.map((doc) => {
-            const href = `/docs/${doc.id}`;
-            const active = currentPath === href;
-            return (
-              <a
-                href={href}
-                class:list={[
-                  "block text-sm px-3 py-1.5 rounded-md transition-colors",
-                  active
-                    ? "text-text bg-surface"
-                    : "text-text-secondary hover:text-text",
-                ]}
-              >
-                {doc.data.title}
-              </a>
-            );
-          })}
+          <a href="/docs" class={linkClass("/docs")}>Overview</a>
+          {coreDocs.map((doc) => (
+            <a href={`/docs/${doc.id}`} class={linkClass(`/docs/${doc.id}`)}>
+              {doc.data.title}
+            </a>
+          ))}
+
+          {dreamerDocs.length > 0 && (
+            <>
+              <div class="pt-4 pb-1 px-3 text-xs uppercase tracking-wider text-text-tertiary">
+                Dreamer Genome
+              </div>
+              {dreamerDocs.map((doc) => (
+                <a href={`/docs/${doc.id}`} class={linkClass(`/docs/${doc.id}`)}>
+                  {doc.data.title}
+                </a>
+              ))}
+            </>
+          )}
         </nav>
       </aside>
 
@@ -59,7 +58,13 @@ const currentPath = Astro.url.pathname.replace(/\/$/, "");
         </summary>
         <nav class="px-4 pb-3 space-y-1">
           <a href="/docs" class="block text-sm py-1 text-text-secondary hover:text-text">Overview</a>
-          {sortedDocs.map((doc) => (
+          {coreDocs.map((doc) => (
+            <a href={`/docs/${doc.id}`} class="block text-sm py-1 text-text-secondary hover:text-text">
+              {doc.data.title}
+            </a>
+          ))}
+          <div class="pt-2 pb-1 text-xs uppercase tracking-wider text-text-tertiary">Dreamer Genome</div>
+          {dreamerDocs.map((doc) => (
             <a href={`/docs/${doc.id}`} class="block text-sm py-1 text-text-secondary hover:text-text">
               {doc.data.title}
             </a>

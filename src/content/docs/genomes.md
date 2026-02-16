@@ -1,7 +1,8 @@
 ---
 title: Genomes
 description: Cognitive blueprints that define what a creature can do — not what it will do.
-order: 3
+order: 4
+section: core
 ---
 
 ## What Is a Genome?
