@@ -30,7 +30,7 @@ seed spawn <name> [options]
 | Flag | Default | Description |
 |---|---|---|
 | `--purpose "..."` | — | What the creature should do |
-| `--genome` | `dreamer` | Cognitive genome (`dreamer` or `minimal`) |
+| `--genome` | `dreamer` | Cognitive genome (any installed or bundled genome name, GitHub user/repo, or full URL) |
 | `--model` | `claude-opus-4-6` | LLM model to use |
 
 ### seed start
@@ -73,6 +73,35 @@ Permanently remove a creature and all its data.
 
 ```bash
 seed destroy <name>
+```
+
+### seed genome install
+
+Install a genome from GitHub.
+
+```bash
+seed genome install <source>
+```
+
+Source can be:
+- A name: `dreamer` (expands to `openseed-dev/genome-dreamer`)
+- A GitHub path: `someuser/genome-trader`
+- A full URL: `https://github.com/someuser/cool-mind`
+
+### seed genome list
+
+List all installed and bundled genomes.
+
+```bash
+seed genome list
+```
+
+### seed genome remove
+
+Remove a user-installed genome.
+
+```bash
+seed genome remove <name>
 ```
 
 ## pnpm Equivalents

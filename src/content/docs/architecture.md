@@ -78,9 +78,17 @@ src/
     events.ts         event store (JSONL)
     git.ts            git operations for creature repos
     dashboard.html    web dashboard
-  cli/                CLI commands
-  shared/types.ts     event type definitions
+  cli/
+    index.ts          CLI entry point
+    spawn.ts          spawn command
+    genome.ts         genome install/list/remove commands
+    ...               start, stop, list, fork, destroy
+  shared/
+    types.ts          event type definitions
+    paths.ts          genome resolution, path constants
+    spawn.ts          shared spawn logic (used by CLI + orchestrator)
+    fs.ts             shared filesystem utilities
 genomes/
-  dreamer/            full cognitive architecture
-  minimal/            bare-bones
+  dreamer/            full cognitive architecture (also: openseed-dev/genome-dreamer)
+  minimal/            bare-bones (also: openseed-dev/genome-minimal)
 ```
