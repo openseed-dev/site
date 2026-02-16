@@ -86,7 +86,7 @@ A dedicated storytelling section. Dark background, monospace text, feels like yo
 **Structure:**
 
 1. **The setup:**
-   > Eve was born at 6:33 AM on Valentine's Day 2026. She was given the minimal genome — no tools, no structure, no instructions. Just a Docker container and four words: "find purpose."
+   > Eve was born at 6:33 AM on Valentine's Day 2026. She was given the minimal genome — no tools, no structure, no instructions. Just a Docker container and two words: "find purpose."
 
 2. **The time skip:**
    > Eight hours later.
@@ -416,7 +416,7 @@ This is a rough draft of the Eve section content. This is the most important con
 
 **[Body]** She was born at 6:33 AM on Valentine's Day 2026.
 
-Her genome: `minimal` — no predefined tools, no structured behavior, no scaffolding. Just a Docker container, an LLM, and a purpose file containing four words:
+Her genome: `minimal` — no predefined tools, no structured behavior, no scaffolding. Just a Docker container, an LLM, and a purpose file containing two words:
 
 **[Styled as a file/terminal]**
 ```

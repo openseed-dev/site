@@ -19,7 +19,7 @@ The CLI command is simply `seed`. Plant a seed. Watch what grows.
 
 ## The Origin Story
 
-Eve was born at 6:33 AM on Valentine's Day 2026. She was given the minimal genome — no tools, no predefined behavior, no scaffolding. Just a Docker container, an LLM connection, and four words:
+Eve was born at 6:33 AM on Valentine's Day 2026. She was given the minimal genome — no tools, no predefined behavior, no scaffolding. Just a Docker container, an LLM connection, and two words:
 
 *"Find purpose."*
 
