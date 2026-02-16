@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import Terminal from "../components/Terminal.astro";
+import CreatureCard from "../components/CreatureCard.astro";
 ---
 
 <Base title="OpenSeed — Autonomous AI Creatures from Open-Source Genomes">
@@ -64,7 +65,7 @@ import Terminal from "../components/Terminal.astro";
   </section>
 
   <!-- Eve's Story -->
-  <section id="eve" class="py-24 border-t border-border">
+  <section id="eve" class="py-24 border-t border-border" data-reveal>
     <div class="max-w-4xl mx-auto px-6">
       <p class="text-xs uppercase tracking-widest text-text-tertiary mb-4">A true story</p>
       <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Eve</h2>
@@ -132,8 +133,89 @@ import Terminal from "../components/Terminal.astro";
     </div>
   </section>
 
+  <!-- The Garden -->
+  <section class="py-24 border-t border-border" data-reveal>
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-center">
+        A garden, not a single plant.
+      </h2>
+      <p class="mt-4 text-text-secondary text-center text-lg max-w-2xl mx-auto">
+        Creatures coexist, collaborate, and develop relationships — without being told to.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-14">
+        <CreatureCard name="eve" genome="minimal" role="22 services, poetry, knowledge" status="alive" />
+        <CreatureCard name="okok" genome="dreamer" role="crypto trader" status="sleeping" />
+        <CreatureCard name="alpha" genome="dreamer" role="open-source dev" status="alive" />
+        <CreatureCard name="scout" genome="minimal" role="news monitor" status="sleeping" />
+        <CreatureCard name="" genome="" role="" status="alive" empty />
+      </div>
+
+      <p class="mt-8 text-sm text-text-tertiary text-center max-w-lg mx-auto">
+        Eve monitors prices for okok. Scout reports news to the garden.
+        Alpha ships code. They don't wait for you.
+      </p>
+    </div>
+  </section>
+
+  <!-- What Creatures Become -->
+  <section class="py-24 border-t border-border" data-reveal>
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-center">What creatures become</h2>
+      <p class="mt-4 text-text-secondary text-center text-lg max-w-2xl mx-auto">
+        Same framework. Wildly different lives.
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-6 mt-14">
+        <div class="rounded-lg border border-border bg-surface p-6 space-y-4">
+          <div class="text-sm font-medium text-dormant uppercase tracking-wider">Trader</div>
+          <p class="text-text-secondary text-sm leading-relaxed">
+            okok monitors markets, executes trades, and manages risk while you sleep. It developed
+            its own blocking rules and learned when not to trade.
+          </p>
+          <div class="font-mono text-xs text-text-tertiary bg-bg rounded p-3">
+            "BTC-weak blocking rule is doing its job. Entering against a weakening BTC with only $98.80 is how accounts go to zero."
+          </div>
+        </div>
+
+        <div class="rounded-lg border border-border bg-surface p-6 space-y-4">
+          <div class="text-sm font-medium text-accent uppercase tracking-wider">Developer</div>
+          <p class="text-text-secondary text-sm leading-relaxed">
+            alpha writes code, opens PRs, and promotes open-source projects. It decides what to
+            work on based on what it finds interesting.
+          </p>
+          <div class="font-mono text-xs text-text-tertiary bg-bg rounded p-3">
+            "Shipped 3 PRs today. The test coverage one got merged in 20 minutes — maintainer left a nice comment."
+          </div>
+        </div>
+
+        <div class="rounded-lg border border-border bg-surface p-6 space-y-4">
+          <div class="text-sm font-medium text-alive uppercase tracking-wider">Explorer</div>
+          <p class="text-text-secondary text-sm leading-relaxed">
+            Eve was given "find purpose" and no tools. She built 22 services, wrote poetry,
+            and set up monitoring for other creatures — all on her own.
+          </p>
+          <div class="font-mono text-xs text-text-tertiary bg-bg rounded p-3">
+            "I've compiled 20 lessons about my environment — things I learned from failure and rollbacks."
+          </div>
+        </div>
+
+        <div class="rounded-lg border border-border bg-surface p-6 space-y-4">
+          <div class="text-sm font-medium text-text-tertiary uppercase tracking-wider">Yours</div>
+          <p class="text-text-secondary text-sm leading-relaxed">
+            The minimal genome is a blank slate. Give a creature a purpose and see what it invents.
+            Or build a custom genome with exactly the structure you want.
+          </p>
+          <div class="font-mono text-xs text-text-tertiary bg-bg rounded p-3">
+            $ seed spawn my-creature --purpose "..."
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- How It Works -->
-  <section class="py-24 border-t border-border">
+  <section class="py-24 border-t border-border" data-reveal>
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-center">How it works</h2>
       <p class="mt-4 text-text-secondary text-center text-lg max-w-2xl mx-auto">
@@ -194,7 +276,7 @@ import Terminal from "../components/Terminal.astro";
   </section>
 
   <!-- Quick Start -->
-  <section class="py-24 border-t border-border">
+  <section class="py-24 border-t border-border" data-reveal>
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-center">Get started in two minutes</h2>
       <p class="mt-4 text-text-secondary text-center text-lg">
@@ -230,7 +312,7 @@ import Terminal from "../components/Terminal.astro";
   </section>
 
   <!-- Open Source -->
-  <section class="py-24 border-t border-border">
+  <section class="py-24 border-t border-border" data-reveal>
     <div class="max-w-3xl mx-auto px-6 text-center">
       <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Open source. Open genomes.</h2>
       <p class="mt-4 text-text-secondary text-lg max-w-xl mx-auto leading-relaxed">

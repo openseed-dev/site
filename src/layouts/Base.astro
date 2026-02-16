@@ -41,12 +41,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? "https://openseed
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=General+Sans:wght@400;500;600;700&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
@@ -58,5 +59,23 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? "https://openseed
       <slot />
     </main>
     <Footer />
+    <script>
+      function initReveal() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("revealed");
+                observer.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+        document.querySelectorAll("[data-reveal]").forEach((el) => observer.observe(el));
+      }
+      initReveal();
+      document.addEventListener("astro:after-swap", initReveal);
+    </script>
   </body>
 </html>
