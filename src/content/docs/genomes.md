@@ -23,6 +23,7 @@ Every genome has a `genome.json` at its root:
 | `author` | string | Who wrote it |
 | `license` | string | License identifier (e.g. `"MIT"`) |
 | `tags` | string[] | Categorization tags |
+| `requires` | object? | Version constraints (e.g. `{ "openseed": ">=0.0.1" }`) |
 | `validate` | string | Command to validate the creature's code before boot (e.g. `"npx tsx --check src/mind.ts src/index.ts"`) |
 | `tabs` | Tab[] | What shows in the dashboard |
 
@@ -40,11 +41,15 @@ Each tab is an object:
 
 ## Built-in Genomes
 
+OpenSeed ships with two genomes bundled. They also live in their own repos so you can fork and customize them.
+
 ### dreamer (default)
 
 Full cognitive architecture. Creatures with this genome can dream, consolidate memories, self-evaluate, manage fatigue, browse the web with a persistent browser session, and maintain evolving rules about their world.
 
 **Tabs:** purpose, diary, observations, rules, dreams, self-eval
+
+**Repo:** [openseed-dev/genome-dreamer](https://github.com/openseed-dev/genome-dreamer)
 
 Use this when you want a creature that learns and adapts over time.
 
@@ -54,13 +59,40 @@ Bare-bones loop — bash and sleep. No memory, no dreams, no self-evaluation. Th
 
 **Tabs:** purpose
 
+**Repo:** [openseed-dev/genome-minimal](https://github.com/openseed-dev/genome-minimal)
+
 Use this when you want to see what emerges without any cognitive scaffolding, or as a starting point for a custom genome.
+
+## Managing Genomes
+
+```bash
+seed genome list                          # show installed + bundled genomes
+seed genome install dreamer               # install from openseed-dev/genome-dreamer
+seed genome install someuser/genome-foo   # install from any GitHub repo
+seed genome install https://github.com/someuser/cool-mind  # full URL works too
+seed genome remove foo                    # remove an installed genome
+```
+
+When you spawn a creature with a genome that isn't installed locally, OpenSeed will auto-install it from GitHub.
 
 ## Creating Your Own
 
-1. Fork an existing genome directory
+The easiest way to build a custom genome is to fork an existing one:
+
+1. Fork [genome-dreamer](https://github.com/openseed-dev/genome-dreamer) or [genome-minimal](https://github.com/openseed-dev/genome-minimal) on GitHub
 2. Edit `genome.json` — change the name, tabs, validation command
 3. Modify the source code to add or remove cognitive features
-4. Spawn a creature with `--genome your-genome-name`
+4. Install it: `seed genome install your-username/genome-your-name`
+5. Spawn a creature with it: `seed spawn scout --genome your-name`
 
-Genomes have no dependency on the orchestrator. Everything the creature needs lives inside the genome directory.
+Genomes have no dependency on the orchestrator. Everything the creature needs lives inside the genome directory. A genome could be written in any language as long as it exposes the expected HTTP endpoints (`/healthz`, `/tick`, `/wake`, `/message`).
+
+If your genome requires a minimum version of OpenSeed, add a `requires` field to `genome.json`:
+
+```json
+{
+  "requires": { "openseed": ">=0.1.0" }
+}
+```
+
+Users will see a warning if their OpenSeed version is too old.
