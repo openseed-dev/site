@@ -10,14 +10,14 @@ section: core
 OpenSeed runs as a single orchestrator daemon that manages creatures. Each creature runs in its own long-lived Docker container with persistent storage.
 
 ```
-Orchestrator (src/host/) — single daemon on your machine
+Orchestrator (src/host/) - single daemon on your machine
 ├── Web dashboard on :7770 (real-time SSE event stream)
-├── LLM proxy — routes to Anthropic or OpenAI based on model
-├── Cost tracker — per-creature, per-model token accounting
-└── Creature supervisors — health check, promote, rollback
+├── LLM proxy - routes to Anthropic or OpenAI based on model
+├── Cost tracker - per-creature, per-model token accounting
+└── Creature supervisors - health check, promote, rollback
     └── Docker containers (long-lived, persistent)
         ├── Creature process (from genome)
-        │   ├── Mind — continuous LLM conversation loop
+        │   ├── Mind - continuous LLM conversation loop
         │   └── Tools: bash, sleep, browser (dreamer only)
         ├── Bind mount: ~/.openseed/creatures/<name>/ → /creature
         └── Named volumes: node_modules, browser profile
@@ -29,7 +29,7 @@ The orchestrator (`src/host/index.ts`) is the single entry point. It exposes an 
 
 It manages all creature supervisors, health-checks every second, promotes a creature's code changes after 10 seconds of stability, and rolls back on crash.
 
-The orchestrator can be restarted without killing containers — it reconnects to running containers on startup.
+The orchestrator can be restarted without killing containers. It reconnects to running containers on startup.
 
 ## LLM Proxy
 
@@ -59,20 +59,20 @@ Each creature lives under `~/.openseed/creatures/<name>/`:
 └── Dockerfile
 ```
 
-- **`src/`** — the creature's own code. Git-tracked. The creature can modify this at runtime; changes go through the health gate before being promoted.
-- **`.sys/`** — platform-managed files (gitignored). Infrastructure the creature doesn't touch.
-- **`.self/`** — cognitive state for dreamer-genome creatures (gitignored). Memory consolidation, dream logs.
-- **`workspace/`** — scratch space for the creature to use freely. Not git-tracked.
-- **`PURPOSE.md`** — defines what the creature exists to do.
-- **`BIRTH.json`** — immutable identity record: name, genome, model, birth timestamp.
+- **`src/`**: the creature's own code. Git-tracked. The creature can modify this at runtime; changes go through the health gate before being promoted.
+- **`.sys/`**: platform-managed files (gitignored). Infrastructure the creature doesn't touch.
+- **`.self/`**: cognitive state for dreamer-genome creatures (gitignored). Memory consolidation, dream logs.
+- **`workspace/`**: scratch space for the creature to use freely. Not git-tracked.
+- **`PURPOSE.md`**: defines what the creature exists to do.
+- **`BIRTH.json`**: immutable identity record: name, genome, model, birth timestamp.
 
 ## Source Layout
 
 ```
 src/
   host/
-    index.ts          orchestrator — API, SSE, creature management
-    proxy.ts          LLM proxy — Anthropic passthrough + OpenAI translation
+    index.ts          orchestrator - API, SSE, creature management
+    proxy.ts          LLM proxy - Anthropic passthrough + OpenAI translation
     supervisor.ts     per-creature Docker lifecycle + health + rollback
     costs.ts          per-creature, per-model cost tracking
     events.ts         event store (JSONL)

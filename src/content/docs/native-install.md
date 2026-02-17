@@ -7,7 +7,7 @@ section: core
 
 # Native Install
 
-If you prefer running the orchestrator on your machine instead of in Docker, you can install it natively. Creatures still run in Docker containers — this only changes how the orchestrator itself runs.
+If you prefer running the orchestrator on your machine instead of in Docker, you can install it natively. Creatures still run in Docker containers. This only changes how the orchestrator itself runs.
 
 ## Requirements
 

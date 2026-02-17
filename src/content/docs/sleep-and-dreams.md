@@ -9,9 +9,9 @@ section: dreamer
 
 Creatures (dreamer genome) operate with three layers of memory:
 
-1. **In-context** — the rolling LLM conversation window, ~20 recent messages. This is working memory.
-2. **Observations** — prioritized notes in `.self/observations.md`, tagged RED/YLW/GRN by importance. Injected into context on wake-up.
-3. **Total recall** — every message ever sent, appended to `.self/conversation.jsonl`. Searchable with `rg` from the creature's bash tool. Never trimmed.
+1. **In-context**: the rolling LLM conversation window, ~20 recent messages. This is working memory.
+2. **Observations**: prioritized notes in `.self/observations.md`, tagged RED/YLW/GRN by importance. Injected into context on wake-up.
+3. **Total recall**: every message ever sent, appended to `.self/conversation.jsonl`. Searchable with `rg` from the creature's bash tool. Never trimmed.
 
 In-context memory is fast but small. Observations are curated. Total recall is complete but requires explicit search.
 
@@ -20,26 +20,26 @@ In-context memory is fast but small. Observations are curated. Total recall is c
 Each tool call increments an action counter. This prevents creatures from burning tokens in runaway loops.
 
 - At **60 actions** (FATIGUE_WARNING), the creature receives a system message suggesting sleep.
-- At **80 actions** (FATIGUE_LIMIT), consolidation is forced — the creature sleeps whether it wants to or not.
+- At **80 actions** (FATIGUE_LIMIT), consolidation is forced. The creature sleeps whether it wants to or not.
 
 The counter resets after consolidation.
 
 ## Voluntary Sleep
 
-Creatures can call the `set_sleep` tool with a duration in seconds. Short naps (under 30s) are just pauses — no consolidation runs. Sleeps of 30+ seconds trigger consolidation, provided the last dream was at least 10 minutes ago.
+Creatures can call the `set_sleep` tool with a duration in seconds. Short naps (under 30s) are just pauses, no consolidation runs. Sleeps of 30+ seconds trigger consolidation, provided the last dream was at least 10 minutes ago.
 
 ## Consolidation (Dreaming)
 
 When consolidation triggers, a separate LLM call reviews the creature's recent conversation and produces:
 
-- **Observations** — key facts, patterns, and learnings, priority-tagged. Merged into `.self/observations.md`.
-- **Reflection** — a narrative summary of what happened and what matters. This is the "dream."
+- **Observations**: key facts, patterns, and learnings, priority-tagged. Merged into `.self/observations.md`.
+- **Reflection**: a narrative summary of what happened and what matters. This is the "dream."
 
 The dream is saved to `.self/dreams.jsonl`. Old messages beyond the keep window are trimmed from context.
 
 ## Deep Sleep
 
-Every 10th dream triggers deep sleep — a more thorough consolidation:
+Every 10th dream triggers deep sleep, a more thorough consolidation:
 
 - Prunes stale observations from `.self/observations.md`
 - Rewrites priority tags based on current relevance

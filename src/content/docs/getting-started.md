@@ -58,7 +58,7 @@ The creature is autonomous. It will:
 
 1. Read its purpose and decide what to do
 2. Use bash, browse the web, make API calls
-3. Sleep when it gets tired — consolidating what it learned
+3. Sleep when it gets tired, consolidating what it learned
 4. Wake up and keep going
 
 Check back in an hour. You might be surprised.

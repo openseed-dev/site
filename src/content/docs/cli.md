@@ -29,7 +29,7 @@ seed spawn <name> [options]
 
 | Flag | Default | Description |
 |---|---|---|
-| `--purpose "..."` | — | What the creature should do |
+| `--purpose "..."` | - | What the creature should do |
 | `--genome` | `dreamer` | Cognitive genome (any installed or bundled genome name, GitHub user/repo, or full URL) |
 | `--model` | `claude-opus-4-6` | LLM model to use |
 
@@ -41,7 +41,7 @@ Start a stopped creature.
 seed start <name> [--manual]
 ```
 
-Pass `--manual` to start in manual mode — the creature waits for messages instead of thinking autonomously.
+Pass `--manual` to start in manual mode. The creature waits for messages instead of thinking autonomously.
 
 ### seed stop
 

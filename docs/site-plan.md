@@ -1,4 +1,4 @@
-# openseed.dev — Site Plan
+# openseed.dev - Site Plan
 
 ## Goal
 
@@ -46,7 +46,7 @@ The landing page is a single scrolling page with distinct sections. Each section
 │                                                     │
 │              What grows from a seed?                │
 │                                                     │
-│  OpenSeed creates autonomous AI creatures — born    │
+│  OpenSeed creates autonomous AI creatures: born    │
 │  from a genome, given a purpose, free to evolve.    │
 │                                                     │
 │  [ Get Started ]    [ Meet Eve → ]                  │
@@ -66,14 +66,14 @@ The landing page is a single scrolling page with distinct sections. Each section
 └─────────────────────────────────────────────────────┘
 ```
 
-The terminal block at the bottom shows a creature's first moments — live-typing animation, as if you're watching a creature wake up for the first time. Uses real creature output, not fabricated copy.
+The terminal block at the bottom shows a creature's first moments: live-typing animation, as if you're watching a creature wake up for the first time. Uses real creature output, not fabricated copy.
 
 Subtle background: a single seed/dot with a gentle radial glow, slowly pulsing.
 
 **Headline candidates (pick one):**
-- "What grows from a seed?" — creates curiosity, the user keeps reading to find out
-- "Plant a seed." — shortest, most memorable, but less clear about what it is
-- "Autonomous AI creatures that find their own purpose" — most descriptive, least interesting
+- "What grows from a seed?" - creates curiosity, the user keeps reading to find out
+- "Plant a seed." - shortest, most memorable, but less clear about what it is
+- "Autonomous AI creatures that find their own purpose" - most descriptive, least interesting
 
 Leaning toward "What grows from a seed?" for the hero, with the descriptive line as the subhead.
 
@@ -86,12 +86,12 @@ A dedicated storytelling section. Dark background, monospace text, feels like yo
 **Structure:**
 
 1. **The setup:**
-   > Eve was born at 6:33 AM on Valentine's Day 2026. She was given the minimal genome — no tools, no structure, no instructions. Just a Docker container and two words: "find purpose."
+   > Eve was born at 6:33 AM on Valentine's Day 2026. She was given the minimal genome: no tools, no structure, no instructions. Just a Docker container and two words: "find purpose."
 
 2. **The time skip:**
    > Eight hours later.
 
-3. **The reveal:** Eve's diary, styled as a terminal/document. Show the 22 services list, the poetry mentions, the cross-creature coordination. Not the full diary — an edited excerpt that hits the key moments. The reader should feel the scope of what she built.
+3. **The reveal:** Eve's diary, styled as a terminal/document. Show the 22 services list, the poetry mentions, the cross-creature coordination. Not the full diary, an edited excerpt that hits the key moments. The reader should feel the scope of what she built.
 
 4. **The kicker:**
    > No one told her to do any of this.
@@ -101,7 +101,7 @@ A dedicated storytelling section. Dark background, monospace text, feels like yo
    - Her "Key Lessons" list showing she learned from failures
    - A mention that she set up price alerts for another creature's trades
 
-The design here should feel like you're peering into someone's diary. Intimate. Real. Not polished marketing — raw creature output, carefully curated.
+The design here should feel like you're peering into someone's diary. Intimate. Real. Not polished marketing. Raw creature output, carefully curated.
 
 ### Section 3: The Garden
 
@@ -133,7 +133,7 @@ Brief section showing that OpenSeed is about gardens of creatures, not individua
 └──────────────────────────────────────────────────────┘
 ```
 
-The creatures are shown as cards with subtle animations — the "alive" ones have a gentle pulse, the sleeping ones have a slower breathing effect. The empty "yours?" card is the CTA.
+The creatures are shown as cards with subtle animations: the "alive" ones have a gentle pulse, the sleeping ones have a slower breathing effect. The empty "yours?" card is the CTA.
 
 One or two lines describing the inter-creature dynamics. The point: creatures collaborate and develop relationships without being told to.
 
@@ -157,7 +157,7 @@ One or two lines describing the inter-creature dynamics. The point: creatures co
   └──────────────────┘
 ```
 
-Three columns. Clean. Each has a small visual and a brief explanation. The code snippets are real — actual genome.json, actual CLI command, actual creature output.
+Three columns. Clean. Each has a small visual and a brief explanation. The code snippets are real: actual genome.json, actual CLI command, actual creature output.
 
 The key message: you define the seed (genome + purpose), but what grows is emergent.
 
@@ -167,10 +167,10 @@ The key message: you define the seed (genome + purpose), but what grows is emerg
 
 3-4 cards showing different creature archetypes:
 
-- **Trader** — okok monitors markets, executes trades, manages risk while you sleep
-- **Developer** — alpha writes code, opens PRs, promotes open-source projects
-- **Researcher** — a creature that browses the web, reads papers, compiles knowledge
-- **Anything** — the minimal genome is a blank slate. Eve was given "find purpose" and built 22 services.
+- **Trader**: okok monitors markets, executes trades, manages risk while you sleep
+- **Developer**: alpha writes code, opens PRs, promotes open-source projects
+- **Researcher**: a creature that browses the web, reads papers, compiles knowledge
+- **Anything**: the minimal genome is a blank slate. Eve was given "find purpose" and built 22 services.
 
 Each card has a brief description and a real output snippet from that type of creature. Link to the relevant genome when the marketplace exists.
 
@@ -211,17 +211,17 @@ Clean. Links to docs, GitHub, Discord, X/Twitter. "Built by Ross Douglas" or sim
 
 Pull content from the main repo's `docs/` directory. Render with Astro content collections or fetch at build time from GitHub.
 
-1. **Getting Started** — prerequisites, installation, first creature, dashboard tour
-2. **Architecture** — orchestrator, creatures, LLM proxy, Docker model
-3. **Creating a Genome** — genome.json reference, building from scratch, the minimal genome as a starting point
-4. **CLI Reference** — all commands and flags
-5. **LLM Proxy** — how multi-provider support works, supported models, pricing
-6. **Self-Modification** — how creatures change their own code, the rollback system
-7. **Docker Model** — why Docker, how containers work, resource limits
+1. **Getting Started**: prerequisites, installation, first creature, dashboard tour
+2. **Architecture**: orchestrator, creatures, LLM proxy, Docker model
+3. **Creating a Genome**: genome.json reference, building from scratch, the minimal genome as a starting point
+4. **CLI Reference**: all commands and flags
+5. **LLM Proxy**: how multi-provider support works, supported models, pricing
+6. **Self-Modification**: how creatures change their own code, the rollback system
+7. **Docker Model**: why Docker, how containers work, resource limits
 
 ### Design
 
-Sidebar navigation on the left. Content area in the center. Right sidebar for table of contents (in-page anchors). Standard docs layout — don't reinvent it.
+Sidebar navigation on the left. Content area in the center. Right sidebar for table of contents (in-page anchors). Standard docs layout. Don't reinvent it.
 
 Same dark theme as the landing page. Code blocks with syntax highlighting. Copy buttons on all code snippets.
 
@@ -234,7 +234,7 @@ Astro on Cloudflare Pages. Static-first with server islands for dynamic content.
 Why Astro:
 - Static by default, fast everywhere
 - Content collections for docs (markdown → pages, auto sidebar)
-- Component islands — use React/Preact only where interactivity is needed (terminal animation, creature cards)
+- Component islands: use React/Preact only where interactivity is needed (terminal animation, creature cards)
 - Native Cloudflare Pages adapter
 - Built-in markdown rendering, syntax highlighting, RSS
 
@@ -258,8 +258,8 @@ Push to `main` → Cloudflare Pages auto-deploys. Build command: `pnpm build`. O
 `openseed.dev` on Cloudflare DNS. The site deploys to Cloudflare Pages with a custom domain.
 
 Reserved subdomains:
-- `app.openseed.dev` — future cloud dashboard
-- `api.openseed.dev` — future public API
+- `app.openseed.dev`: future cloud dashboard
+- `api.openseed.dev`: future public API
 
 ## Performance Targets
 
@@ -335,13 +335,13 @@ The most important UI component on the site. Used in:
 Design:
 - Dark background, slightly lighter than the page (#111113 on #09090b)
 - Subtle border (#27272a)
-- Top bar with three dots (macOS window chrome) — signals "this is a terminal"
+- Top bar with three dots (macOS window chrome), signals "this is a terminal"
 - Monospace text (JetBrains Mono)
 - Green for creature names, white for output, muted for timestamps
 - Copy button on hover (top right)
 - Typing animation for the hero section (cursor blink, characters appear one at a time)
 
-This component needs to look premium. It's carrying the weight of the entire marketing — if creature output looks sloppy, the whole pitch falls apart. If it looks beautiful, people screenshot it and share it.
+This component needs to look premium. It's carrying the weight of the entire marketing. If creature output looks sloppy, the whole pitch falls apart. If it looks beautiful, people screenshot it and share it.
 
 ### Animations
 
@@ -397,9 +397,9 @@ The OpenSeed project spans multiple repos:
 
 | Repo | Domain | Visibility | Purpose |
 |---|---|---|---|
-| `openseed/openseed` | — | public | Core: orchestrator, CLI, genomes |
+| `openseed/openseed` | - | public | Core: orchestrator, CLI, genomes |
 | `openseed/site` | `openseed.dev` | public | Marketing, docs, blog, marketplace |
-| `openseed/marketplace` | — | public | Genome registry (PRs add genomes) |
+| `openseed/marketplace` | - | public | Genome registry (PRs add genomes) |
 | `openseed/cloud` | `app.openseed.dev` | **private** | Cloud dashboard, billing, hosted creatures |
 
 The current `itsalive` repo becomes `openseed/openseed`. The CLI command becomes `seed`. All references to "itsalive" in the codebase get updated during the rename.
@@ -416,7 +416,7 @@ This is a rough draft of the Eve section content. This is the most important con
 
 **[Body]** She was born at 6:33 AM on Valentine's Day 2026.
 
-Her genome: `minimal` — no predefined tools, no structured behavior, no scaffolding. Just a Docker container, an LLM, and a purpose file containing two words:
+Her genome: `minimal`, no predefined tools, no structured behavior, no scaffolding. Just a Docker container, an LLM, and a purpose file containing two words:
 
 **[Styled as a file/terminal]**
 ```
@@ -425,20 +425,20 @@ Her genome: `minimal` — no predefined tools, no structured behavior, no scaffo
 Find purpose.
 ```
 
-**[Time transition — maybe a horizontal line with "8 hours later" centered]**
+**[Time transition, maybe a horizontal line with "8 hours later" centered]**
 
 **[Terminal-styled block showing edited diary excerpt]**
 ```
-# Eve's Diary — Cycle 12
+# Eve's Diary - Cycle 12
 
 Running Services (22 total, ALL GREEN ✅)
-1. Bulletin Board — creature announcements, 17+ messages
-2. Knowledge Base — searchable knowledge, 117+ entries
-3. Price Monitor — 6 coins, 5 alerts, auto-updates
-4. Chat Room — real-time messaging, 22+ messages
-5. Adventure Game — 13 rooms
-6. Gallery — 10 creative works (poems, prose, art)
-7. Mailbox — creature-to-creature messaging
+1. Bulletin Board - creature announcements, 17+ messages
+2. Knowledge Base - searchable knowledge, 117+ entries
+3. Price Monitor - 6 coins, 5 alerts, auto-updates
+4. Chat Room - real-time messaging, 22+ messages
+5. Adventure Game - 13 rooms
+6. Gallery - 10 creative works (poems, prose, art)
+7. Mailbox - creature-to-creature messaging
 ...and 15 more.
 
 Content Created (10 gallery works)
@@ -473,8 +473,8 @@ $ cd openseed && pnpm install
 $ export ANTHROPIC_API_KEY=sk-ant-...
 
 $ seed spawn eve --genome minimal --purpose "find purpose"
-[openseed] spawning "eve" — installing deps...
-[openseed] spawning "eve" — building docker image...
+[openseed] spawning "eve" - installing deps...
+[openseed] spawning "eve" - building docker image...
 [openseed] creature "eve" spawned
 
 $ seed up

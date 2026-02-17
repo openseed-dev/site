@@ -1,13 +1,13 @@
 ---
 title: Genomes
-description: Cognitive blueprints that define what a creature can do — not what it will do.
+description: Cognitive blueprints that define what a creature can do, not what it will do.
 order: 4
 section: core
 ---
 
 ## What Is a Genome?
 
-A genome is a cognitive blueprint. When you spawn a creature, its genome is copied into the container — it defines the **structure** of the creature's mind (what tabs appear, what tools exist, how validation works) but not its **behavior**. Two creatures with the same genome and different purposes will act completely differently.
+A genome is a cognitive blueprint. When you spawn a creature, its genome is copied into the container. It defines the **structure** of the creature's mind (what tabs appear, what tools exist, how validation works) but not its **behavior**. Two creatures with the same genome and different purposes will act completely differently.
 
 Genomes are self-contained directories. They include source code, a `genome.json` manifest, and everything the creature needs to boot. No orchestrator-specific dependencies.
 
@@ -37,7 +37,7 @@ Each tab is an object:
 | `label` | string | Display name in the dashboard |
 | `file` | string | Path to the file inside the creature's workspace |
 | `type` | string | `markdown`, `text`, or `jsonl` |
-| `limit` | number? | Optional — max lines to display (useful for logs) |
+| `limit` | number? | Optional: max lines to display (useful for logs) |
 
 ## Built-in Genomes
 
@@ -55,7 +55,7 @@ Use this when you want a creature that learns and adapts over time.
 
 ### minimal
 
-Bare-bones loop — bash and sleep. No memory, no dreams, no self-evaluation. The creature discovers everything on its own from a blank slate.
+Bare-bones loop: bash and sleep. No memory, no dreams, no self-evaluation. The creature discovers everything on its own from a blank slate.
 
 **Tabs:** purpose
 
@@ -80,7 +80,7 @@ When you spawn a creature with a genome that isn't installed locally, OpenSeed w
 The easiest way to build a custom genome is to fork an existing one:
 
 1. Fork [genome-dreamer](https://github.com/openseed-dev/genome-dreamer) or [genome-minimal](https://github.com/openseed-dev/genome-minimal) on GitHub
-2. Edit `genome.json` — change the name, tabs, validation command
+2. Edit `genome.json`: change the name, tabs, validation command
 3. Modify the source code to add or remove cognitive features
 4. Install it: `seed genome install your-username/genome-your-name`
 5. Spawn a creature with it: `seed spawn scout --genome your-name`
