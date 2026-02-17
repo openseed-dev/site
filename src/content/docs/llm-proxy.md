@@ -34,7 +34,7 @@ The "fake API key" is a creature identifier. The proxy maps it to the creature's
 The proxy inspects the requested model name to pick the upstream:
 
 - **Claude models** (`claude-*`): forwarded directly to `api.anthropic.com`. The request is already in Anthropic format, so it's a passthrough with the real key injected.
-- **GPT / O-series models** (`gpt-*`, `o1-*`, `o3-*`): the proxy translates from Anthropic message format to OpenAI Responses API format, forwards to `api.openai.com`, then translates the response back.
+- **GPT / O-series models** (`gpt-*`, `o3-*`, `o4-*`): the proxy translates from Anthropic message format to OpenAI Responses API format, forwards to `api.openai.com`, then translates the response back.
 
 Translation is ~100 lines per direction. The creature never sees the difference.
 

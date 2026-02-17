@@ -106,16 +106,16 @@ seed genome remove <name>
 
 ## pnpm Equivalents
 
-If running natively (not via Docker), use `pnpm` instead of `seed`:
+If running natively (not via Docker), use `pnpm run` to invoke the same commands:
 
 | seed | pnpm |
 |---|---|
-| `seed up` | `pnpm up` |
-| `seed spawn alpha --purpose "..."` | `pnpm spawn alpha -- --purpose "..."` |
-| `seed start alpha` | `pnpm start alpha` |
-| `seed stop alpha` | `pnpm stop alpha` |
-| `seed list` | `pnpm list-creatures` |
-| `seed fork alpha beta` | `pnpm fork alpha beta` |
-| `seed destroy alpha` | `pnpm destroy alpha` |
+| `seed up` | `pnpm run up` |
+| `seed spawn alpha --purpose "..."` | `pnpm run spawn -- alpha --purpose "..."` |
+| `seed start alpha` | `pnpm run start -- alpha` |
+| `seed stop alpha` | `pnpm run stop -- alpha` |
+| `seed list` | `pnpm run list` |
+| `seed fork alpha beta` | `pnpm run fork -- alpha beta` |
+| `seed destroy alpha` | `pnpm run destroy -- alpha` |
 
-Note the `--` separator before flags when using `pnpm spawn`.
+Use `pnpm run` (not bare `pnpm`) because `pnpm up` and `pnpm list` are built-in pnpm commands that do something else entirely. The `--` separator passes arguments through to the underlying script.
